@@ -1,0 +1,15 @@
+[PANEL_2]
+lbl_p2_nombrelocal=Nombre local+Ingresa un nombre para poder controlar la cuenta dentro del programa.
+lbl_p2_usuario=Usuario+Ingresa tu usuario de Steam.
+lbl_p2_contraseña=Contraseña+Ingresa la contraseña de tu cuenta de Steam.
+lbl_p2_imagen=Imagen+Selecciona una de las imágenes predeterminadas, agrega la|imágen de tu cuenta mediante tu Steam ID o utiliza una imágen|de tu computadora.
+lbl_p2_steam64=Identificador STEAM64+Cada cuenta de Steam poseen distintos identificadores únicos, uno de estos es el Steam ID.||Sugerencia:|Verifica tu identificador mediante el botón azul de ayuda.
+[PANEL_5]
+chb_p5_iniciar2=Iniciar con Windows+El programa se iniciará junto con el sistema operativo.
+chb_p5_icono2=Usar icono de seguimiento al minimizar+El programa se ocultara en la barra de iconos inferior.||Sugerencia:|Podrás mostrar un menú de acceso rápido presionando|el click derecho de tu mouse sobre el icono.
+chb_p5_minimizarAlIniciar2=Minimizar ventana al iniciar el programa con Windows+El programa se minimizara automáticamente, después de que se inicie junto con el sistema operativo.
+chb_p5_minimizarConPrograma2=Minimizar ventana al iniciar Steam o WinAuth+El programa se minimizara automáticamente, después de ejecutar Steam o WinAuth.
+chb_p5_preguntar_iniciar2=Preguntar contraseña+El programa necesitara el ingreso de la contraseña general para poder entrar.
+chb_p5_ocultar_user2=Ocultar usuario+Se ocultarán los usuarios de Steam dentro de la página principal.
+lbl_p5_dirWinAuth=Directorio WinAuth+El programa necesita el directorio del ejecutable de WinAuth.
+lbl_p5_dirSteam=Directorio Steam+El programa necesita el directorio del ejecutable de Steam.

@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SLA Manager": {
+      "commandName": "Project",
+      "hotReloadEnabled": false
+    }
+  }
+}

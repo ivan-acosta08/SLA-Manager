@@ -1,0 +1,31 @@
+[PANEL_0]
+lbl_p1_title=Cuentas
+lbl_p2_title=Agregar
+lbl_p3_title=Editar
+lbl_p4_title=Eliminar
+lbl_p5_title=Ajustes
+[PANEL_2]
+lbl_p2_nombrelocal=NOMBRE LOCAL
+lbl_p2_usuario=USUARIO
+lbl_p2_contraseña=CONTRASEÑA
+lbl_p2_imagen=IMAGEN
+btn_p2_agregar=Agregar
+[PANEL_3]
+btn_p3_editar=Editar
+lbl_p3_img=IMAGEN
+lbl_p3_usuario=USUARIO
+lbl_p3_contraseña=CONTRASEÑA
+btn_p3_guardar=Guardar
+[PANEL_4]
+lbl_p4_usuario=USUARIO
+lbl_p4_contra=CONTRASEÑA
+btn_p4_delete=Eliminar
+[PANEL_5]
+chb_p5_iniciar2=Iniciar con Windows
+chb_p5_icono2=Usar icono de seguimiento al minimizar
+chb_p5_minimizarAlIniciar2=Minimizar ventana al iniciar el programa con Windows
+chb_p5_minimizarConPrograma2=Minimizar ventana al iniciar Steam o WinAuth
+chb_p5_preguntar_iniciar2=Preguntar contraseña al iniciar el programa
+chb_p5_ocultar_user2=Ocultar usuario en pagina principal
+lbl_p5_dirWinAuth=Selecciona el directorio de WinAuth:
+lbl_p5_dirSteam=Selecciona el directorio de Steam:

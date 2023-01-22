@@ -1,0 +1,33 @@
+[PANEL_0]
+lbl_p1_title=Accounts
+lbl_p2_title=Add
+lbl_p3_title=Edit
+lbl_p4_title=Delete
+lbl_p5_title=Settings
+[PANEL_2]
+lbl_p2_nombrelocal=LOCAL NAME
+lbl_p2_usuario=USER
+lbl_p2_contraseña=PASSWORD
+lbl_p2_imagen=IMAGE
+btn_p2_agregar=Add user
+[PANEL_3]
+btn_p3_editar=Edit
+lbl_p3_img=IMAGE
+lbl_p3_usuario=USER
+lbl_p3_contraseña=PASSWORD
+btn_p3_guardar=Save
+[PANEL_4]
+lbl_p4_usuario=USER
+lbl_p4_contra=PASSWORD
+btn_p4_delete=Delete
+[PANEL_5]
+chb_p5_iniciar=Start with Windows
+chb_p5_icono=Use system tray when minimizing
+chb_p5_minimizarAlIniciar=Minimize program at Windows startup
+chb_p5_minimizarConPrograma=Minimize window when starting Steam or WinAuth
+chb_p5_preguntar_iniciar=Prompt for password on program start
+chb_p5_ocultar_user=Hide user on main page
+lbl_p5_idioma=Language:
+lbl_p5_dirWinAuth=Select WinAuth directory:
+lbl_p5_dirSteam=Select Steam directory:
+btn_p5_reiniciar=Reset settings

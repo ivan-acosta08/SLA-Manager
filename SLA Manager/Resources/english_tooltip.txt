@@ -1,0 +1,15 @@
+[PANEL_2]
+lbl_p2_nombrelocal=Local name+Provide a local name to control the account into the program.
+lbl_p2_usuario=Username+Enter your Steam username.
+lbl_p2_contraseña=Password+Enter your Steam account password.
+lbl_p2_imagen=Image+Select one of the default images, add your account image using your Steam ID or use an image from your computer.
+lbl_p2_steam64=Identifier STEAM64+Each Steam account has different unique identifiers, one of these is the Steam ID.
+[PANEL_5]
+chb_p5_iniciar2=Start with windows+The program will start together with the operating system.
+chb_p5_icono2=Use tracking icon when minimizing+The program will be hidden in the bottom icon bar.||Hint: You can display a quick access menu by right-clicking on the icon.
+chb_p5_minimizarAlIniciar2=Minimize window at windows startup+The program will be minimized automatically, after it is started together with the operating system.
+chb_p5_minimizarConPrograma2=Minimize window on Steam or WinAuth startup+The program will be minimized automatically, after running Steam or WinAuth.
+chb_p5_preguntar_iniciar2=Prompt for password+The program will require the general password to enter.
+chb_p5_ocultar_user2=Hide username+Steam users will be hidden inside the main page.
+lbl_p5_dirWinAuth=WinAuth path+The program needs the WinAuth executable directory.
+lbl_p5_dirSteam=Steam path+The program needs the Steam executable directory.
