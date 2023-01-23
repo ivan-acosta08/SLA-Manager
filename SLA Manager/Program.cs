@@ -10,25 +10,14 @@ namespace SLA_Manager
         [STAThread]
         static void Main(string[] args)
         {
+            string argu = "";
+            foreach (string arg in args)
+            {
+                argu = argu + arg;
+            }
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            //No abrir mas de una ventana
-            string currPrsName = Process.GetCurrentProcess().ProcessName;
-            Process[] allProcessWithThisName = Process.GetProcessesByName(currPrsName);
-
-            try
-            {
-                if (allProcessWithThisName.Length > 1)
-                {
-                    Process.GetCurrentProcess().Kill();
-                }
-            }
-            catch
-            {
-                Debug.WriteLine("Error en allProcessWithThisName > 1");
-            }
-            //No abrir mas de una ventana
 
             //Verificar carpetas en %appdata%
             string tempPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
@@ -89,7 +78,7 @@ namespace SLA_Manager
                 {
                     if (lines[3].Split(",")[1] == "true")
                     {
-                        if (args.Length != 0){ 
+                        if (argu != ""){ 
                             Application.Run(new Form_Main("Minimizado"));
                         } else {
                             Application.Run(new Form_Main("Normal"));

@@ -717,6 +717,7 @@ namespace SLA_Manager
                 if (Preferencias.GetConfig().val_MinimizarProgramas == true)
                 {
                     this.WindowState = FormWindowState.Minimized;
+                    Preferencias.SetConfig("MensajeMinimizar", "true");
                 } else
                 {
                     this.WindowState = FormWindowState.Normal;

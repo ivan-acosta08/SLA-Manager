@@ -43,12 +43,12 @@ namespace SLA_Manager
             }
         }
 
-        string modo2 = "";
-        public Form_Main(string modo)
+        bool iniciado = false;
+
+        public Form_Main(string modoInicio)
         {
             Preferencias.SetConfig("MensajeMinimizar", "false");
 
-            modo2 = modo;
             InitializeComponent();
             Verificar();
             actualizarIdioma();
@@ -62,12 +62,14 @@ namespace SLA_Manager
                 cbox_p5_idioma.Text = "English";
             }
 
-            if (modo == "Minimizado")
+            this.Show();
+
+            if (modoInicio == "Minimizado")
             {
-                Notificacion.Visible = false;
-                this.Show();
                 this.WindowState = FormWindowState.Minimized;
             }
+
+            iniciado = true;
 
             this.Size = new Size(735, 400);
 
@@ -160,8 +162,8 @@ namespace SLA_Manager
 
         private void btnMinimize_Click(object sender, EventArgs e)
         {
-            modo2 = "Normal";
             this.WindowState = FormWindowState.Minimized;
+            Preferencias.SetConfig("MensajeMinimizar", "true");
         }
 
         private void Form_Main_Resize(object sender, EventArgs e)
@@ -182,13 +184,9 @@ namespace SLA_Manager
                         Notificacion.BalloonTipText = "This program has been minimized to the tray";
                     }
 
-                    if (modo2 == "Normal")
+                    if (Preferencias.GetConfig().val_mensajeMinimizar == false && iniciado)
                     {
-                        if (Preferencias.GetConfig().val_mensajeMinimizar == false)
-                        {
-                            Notificacion.ShowBalloonTip(500);
-                            Preferencias.SetConfig("MensajeMinimizar", "true");
-                        }
+                        Notificacion.ShowBalloonTip(500);
                     }
                 }
                 else
@@ -586,7 +584,6 @@ namespace SLA_Manager
                 {
                     if (Preferencias.GetConfig().val_MinimizarProgramas == true)
                     {
-                        modo2 = "Normal";
                         this.WindowState = FormWindowState.Minimized;
                     }
 
@@ -594,7 +591,7 @@ namespace SLA_Manager
                 }
                 catch
                 {
-                    Debug.Print("Erro al abrir Steam.exe");
+                    Debug.Print("Error al abrir Steam.exe");
                 }
             }
             else
@@ -618,7 +615,6 @@ namespace SLA_Manager
                 {
                     if (Preferencias.GetConfig().val_MinimizarProgramas == true)
                     {
-                        modo2 = "Normal";
                         this.WindowState = FormWindowState.Minimized;
                     }
 
