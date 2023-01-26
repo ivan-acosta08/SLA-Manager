@@ -655,12 +655,14 @@ namespace SLA_Manager
         {
             Button btn = sender as Button;
             btn.Image = new Bitmap(Resources.play_button_shadow);
+            btn.Cursor = Cursors.Hand;
         }
 
         private void playButton_Leave(object sender, EventArgs e)
         {
             Button btn = sender as Button;
             btn.Image = new Bitmap(Resources.play_button_solo);
+            btn.Cursor = Cursors.Arrow;
         }
         
         void button_click(object sender, EventArgs e)

@@ -225,15 +225,6 @@ namespace SLA_Manager
                 pic_p5_delete1.Visible = true;
 
                 Preferencias.SetConfig("WinAuthPath", open.FileName);
-            } else {
-                if (Preferencias.GetConfig().val_lang == "español")
-                {
-                    this.Alert("Ingrese un directorio\nde WinAuth correctamente", Form_Alert.enmType.Folder);
-                }
-                else
-                {
-                    this.Alert("Put an correct\nWinAuth directory", Form_Alert.enmType.Folder);
-                }
             }
         }
 
@@ -248,17 +239,6 @@ namespace SLA_Manager
                 pic_p5_delete2.Visible = true;
 
                 Preferencias.SetConfig("SteamPath", open.FileName);
-            }
-            else
-            {
-                if (Preferencias.GetConfig().val_lang == "español")
-                {
-                    this.Alert("Ingrese un directorio\nde Steam correctamente", Form_Alert.enmType.Folder);
-                }
-                else
-                {
-                    this.Alert("Put an correct\nSteam directory", Form_Alert.enmType.Folder);
-                }
             }
         }
 

@@ -312,16 +312,16 @@ namespace SLA_Manager
             File.WriteAllText(fileName, "");
         }
 
-        List<string> filas = new List<string>();
 
         private void Notificacion_MouseClick(object sender, MouseEventArgs e)
         {
+            List<string> filas = new List<string>();
+
             if (e.Button == MouseButtons.Right)
             {
-                ctxt_icontry.Show();
                 ctxt_icontry.Items.Clear();
                 filas.Clear();
-                
+
                 filas.Add("SLA Manager");
                 filas.Add("-");
                 filas.Add("Steam");
@@ -364,7 +364,7 @@ namespace SLA_Manager
                     {
                         ToolStripMenuItem tm = new ToolStripMenuItem();
                         tm.Text = filas[z];
-                        tm.ForeColor = Color.FromArgb(0, 174, 217);
+                        tm.ForeColor = Color.FromArgb(11, 190, 255);
                         ctxt_icontry.Items.Add(tm);
                     } else if (filas[z] == "Salir" || filas[z] == "Exit")
                     {
@@ -382,11 +382,9 @@ namespace SLA_Manager
                         tm.Text = filas[z];
                         tm.ForeColor = Color.White;
                         tm.Image = Resources.ayuda;
-                        ctxt_icontry.Items.Add(tm); 
+                        ctxt_icontry.Items.Add(tm);
                     }
                 }
-
-                ctxt_icontry.ItemClicked += new ToolStripItemClickedEventHandler(MenuNotificacion_ItemClicked);
             }
             else if (e.Button == MouseButtons.Left)
             {
@@ -423,10 +421,13 @@ namespace SLA_Manager
                 ShowInTaskbar = true;
                 Notificacion.Visible = false;
             }
+            
+            ctxt_icontry.ItemClicked += new ToolStripItemClickedEventHandler(MenuNotificacion_ItemClicked);
         }
 
         private void MenuNotificacion_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            ctxt_icontry.ItemClicked -= new ToolStripItemClickedEventHandler(MenuNotificacion_ItemClicked);
             ToolStripItem item = e.ClickedItem;
 
             if (item.Text == "SLA Manager")
@@ -507,7 +508,7 @@ namespace SLA_Manager
                 Notificacion.Visible = false;
                 Process.GetCurrentProcess().Kill();
             }
-            else
+            else if(item.Text != "")
             {
                 Verificar();
 
@@ -529,6 +530,36 @@ namespace SLA_Manager
                         Debug.WriteLine("No se pudo cerrar Steam");
                     }
 
+                    try
+                    {
+                        Thread.Sleep(100);
+
+                        string tempPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+                        string fileData = tempPath + @"\SLA Manager\data\steam_data.txt";
+
+                        string[] linesData = File.ReadAllLines(fileData); //data
+                        string strUsuario = "";
+                        string strContra = "";
+
+                        for (int y=0; y < linesData.Length; y++)
+                        {
+                            if (linesData[y].Contains(item.Text))
+                            {
+                                strUsuario = Seguridad.DesEncriptar(linesData[y].Split(",")[1]);
+                                strContra = Seguridad.DesEncriptar(linesData[y].Split(",")[2]);
+                            }
+                        }
+
+                        string quote = "\"";
+                        string PathInicio = quote + SteamPath + quote;
+                        string PathParamentros = " -login " + strUsuario + " " + strContra;
+                        Process.Start(PathInicio, PathParamentros);
+                    }
+                    catch
+                    {
+                        Debug.WriteLine("No se pudo abrir Steam");
+                    }
+                    /*
                     try
                     {
                         string usuario = "", contra = "";
@@ -556,7 +587,7 @@ namespace SLA_Manager
                     catch
                     {
                         Debug.WriteLine("No se pudo abrir Steam");
-                    }
+                    }*/
                 }
                 else
                 {
@@ -747,6 +778,111 @@ namespace SLA_Manager
                     }
 
                 }
+            }
+        }
+
+        private void Form_Main_Load(object sender, EventArgs e)
+        {
+            //Panel 2
+            foreach (PictureBox b in this.panel_Menu2.Controls.OfType<PictureBox>())
+            {
+                if (b.Name != "pic_p2_main")
+                {
+                    b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                    b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+                }
+            }
+            foreach (RJButton b in this.panel_Menu2.Controls.OfType<RJButton>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.panel1.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.panel3.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.panel4.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.panel5.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+
+            //Panel 3
+            foreach (PictureBox b in this.panel_Menu3.Controls.OfType<PictureBox>())
+            {
+                if (b.Name != "pic_p3_user")
+                {
+                    b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                    b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+                }
+            }
+            foreach (RJButton b in this.panel_Menu3.Controls.OfType<RJButton>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.pnl_p3_img1.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.pnl_p3_img2.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.pnl_p3_img3.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.pnl_p3_img4.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+
+            //Panel 4
+            foreach (RJButton b in this.panel_Menu4.Controls.OfType<RJButton>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.panel_Menu4.Controls.OfType<PictureBox>())
+            {
+                if (b.Name != "pic_p4_user")
+                {
+                    b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                    b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+                }
+            }
+
+            //Panel 5
+            foreach (RJButton b in this.panel_Menu5.Controls.OfType<RJButton>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (RJToggleButton b in this.panel_Menu5.Controls.OfType<RJToggleButton>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
+            }
+            foreach (PictureBox b in this.panel_Menu5.Controls.OfType<PictureBox>())
+            {
+                b.MouseEnter += (s, e) => b.Cursor = Cursors.Hand;
+                b.MouseLeave += (s, e) => b.Cursor = Cursors.Arrow;
             }
         }
 

@@ -990,13 +990,16 @@
             // 
             // btn_p5_reiniciar
             // 
-            this.btn_p5_reiniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(217)))));
-            this.btn_p5_reiniciar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(217)))));
+            this.btn_p5_reiniciar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btn_p5_reiniciar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btn_p5_reiniciar.BackgroundImage = global::SLA_Manager.Properties.Resources.synchronize_40px;
             this.btn_p5_reiniciar.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.btn_p5_reiniciar.BorderRadius = 0;
             this.btn_p5_reiniciar.BorderSize = 0;
+            this.btn_p5_reiniciar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btn_p5_reiniciar.FlatAppearance.BorderSize = 0;
+            this.btn_p5_reiniciar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
+            this.btn_p5_reiniciar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.btn_p5_reiniciar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_p5_reiniciar.ForeColor = System.Drawing.Color.White;
             this.btn_p5_reiniciar.Location = new System.Drawing.Point(437, 40);
@@ -1344,6 +1347,7 @@
             // 
             this.ctxt_icontry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(35)))), ((int)(((byte)(40)))));
             this.ctxt_icontry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ctxt_icontry.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.ctxt_icontry.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.holaToolStripMenuItem});
             this.ctxt_icontry.Name = "ctxt_icontry";
@@ -2117,6 +2121,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SLA Manager";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Main_FormClosing);
+            this.Load += new System.EventHandler(this.Form_Main_Load);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form_MouseMove);
             this.Resize += new System.EventHandler(this.Form_Main_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
